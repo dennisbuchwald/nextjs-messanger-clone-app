@@ -99,7 +99,7 @@ const AuthForm = () => {
         <div className="flex gap-2 justify-center text-sm mt-6 px-2 text-gray-500">
           <div>
             {variant === "LOGIN"
-              ? "Neu beim Dessanger?"
+              ? "Neu beim Dessenger?"
               : "Du hast bereits einen Account?"}
           </div>
           <div onClick={toogleVariant} className="underline cursor-pointer">
