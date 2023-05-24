@@ -1,14 +1,14 @@
 "use client";
 import clsx from "clsx";
-import { FieldError, FieldValues, UseFormRegister } from "react-hook-form";
+import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 
 interface InputProps {
   label: string;
   id: string;
   type?: string;
   required?: string;
-  register?: UseFormRegister<FieldValues>;
-  errors: FieldError;
+  register: UseFormRegister<FieldValues>;
+  errors: FieldErrors;
   disabled?: boolean;
 }
 
@@ -41,7 +41,7 @@ const Input: React.FC<InputProps> = ({
           type={type}
           autoComplete={id}
           disabled={disabled}
-          {...register(id, { required: required })}
+          {...register(id, { required })}
           className={clsx(
             `
           form-input 
