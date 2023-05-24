@@ -49,7 +49,12 @@ const AuthForm = () => {
     <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
       <div className="bg-white px4 py-8 shaddow sm:rounded-lg sm:px-10">
         <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
-          <Input id="email" label="E-Mail" register={register} />
+          <Input
+            id="email"
+            label="E-Mail"
+            register={register}
+            errors={errors}
+          />
         </form>
       </div>
     </div>
