@@ -2,8 +2,10 @@
 
 import { useCallback, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { BsGithub } from "react-icons/bs";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button";
+import AuthSocialButton from "../components/AuthSocialButton";
 
 type Variant = "LOGIN" | "REGISTER";
 
@@ -73,6 +75,37 @@ const AuthForm = () => {
             </Button>
           </div>
         </form>
+
+        <div className="mt-6">
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-300" />
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="bg-white px-2 text-gray-500">
+                oder weiter mit
+              </span>
+            </div>
+          </div>
+
+          <div className="mt-6 flex gap-2">
+            <AuthSocialButton
+              icon={BsGithub}
+              onClick={() => socialAction("github")}
+            />
+          </div>
+        </div>
+
+        <div className="flex gap-2 justify-center text-sm mt-6 px-2 text-gray-500">
+          <div>
+            {variant === "LOGIN"
+              ? "Neu beim Dessanger?"
+              : "Du hast bereits einen Account?"}
+          </div>
+          <div onClick={toogleVariant} className="underline cursor-pointer">
+            {variant === "LOGIN" ? " Erstelle einen Account" : "Einloggen"}
+          </div>
+        </div>
       </div>
     </div>
   );
